@@ -1,0 +1,13 @@
+version: "3"
+services:
+  restredis-app:
+    build: .
+    image: abdelkaderdali/restredis-app
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+    depends_on:
+      - redis
+  redis:
+    image: redis

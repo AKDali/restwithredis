@@ -1,0 +1,14 @@
+version: "3"
+services:
+  restredis-app:
+    build:
+      context: .
+      args:
+        NODE_ENV: development
+    volumes:
+      - ./:/app
+    environment:
+      - NODE_ENV=development
+      - REDIS_URL=redis
+      - REDIS_PORT=6379
+    command: npm run dev
