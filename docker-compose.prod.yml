@@ -5,6 +5,8 @@ services:
       context: .
       args:
         NODE_ENV: production
+    ports:
+      - "80:5000"
     environment:
       - NODE_ENV=production
       - REDIS_URL=redis
